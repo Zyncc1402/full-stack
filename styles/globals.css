@@ -143,6 +143,23 @@ img {
   justify-content: space-between;
 }
 
+.profilePic {
+  border-radius: 50%;
+}
+
+.profilePicPage {
+  border-radius: 50%;
+  width: 100px;
+  margin-bottom: 30px;
+}
+
+.signInOptions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 30px;
+}
+
 .navMenu {
   display: flex;
   align-items: center;
@@ -170,7 +187,14 @@ a {
 }
 
 /*=============== HOME ===============*/
-
+.home {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 /*=============== ABOUT ===============*/
 
 /*=============== COURSES ===============*/
