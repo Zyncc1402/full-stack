@@ -8,6 +8,12 @@ const authOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
   ],
+  callbacks: {
+      async signIn({user, account} {
+         console.log('sign in was successful')
+         return user
+}
+}
 };
 
 const handler = NextAuth(authOptions);
