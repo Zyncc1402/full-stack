@@ -3,7 +3,7 @@ import Navbar from '@components/navbar/Navbar'
 import Provider from '@components/provider'
 
 export const metadata = {
-  title: "Full Stack Next App",
+  title: "E-Commerce Website",
   description: "first time doing this",
 };
 

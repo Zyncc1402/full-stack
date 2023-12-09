@@ -129,35 +129,18 @@ img {
 /*=============== HEADER ===============*/
 .header {
   width: 100%;
-  background-color: black;
+  background-color: transparent;
   position: fixed;
   top: 0;
   right: 0;
-  color: white;
-  padding: 20px 30px;
+  padding: 20px 0px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 /*=============== NAV ===============*/
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.profilePic {
-  border-radius: 50%;
-}
-
-.profilePicPage {
-  border-radius: 50%;
-  width: 100px;
-  margin-bottom: 30px;
-}
-
-.signInOptions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  column-gap: 30px;
 }
 
 .navMenu {
@@ -171,10 +154,9 @@ img {
   padding: 10px;
   border-radius: 5px;
   border: none;
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: black;
   font-weight: 600;
-  margin-left: 20px;
 }
 
 .navList {
@@ -183,7 +165,7 @@ img {
 
 a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 /*=============== HOME ===============*/
@@ -195,7 +177,65 @@ a {
   justify-content: center;
   flex-direction: column;
 }
-/*=============== ABOUT ===============*/
+
+.mainpage {
+  height: 100vh;
+  width: 100%;
+}
+/*=============== SIGNIN ===============*/
+.loginBox {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 30px 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+}
+
+.googleBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px black solid;
+  padding: 5px;
+  margin: 20px 0px;
+  border-radius: 6px;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+input::placeholder {
+  font-family: "Poppins", sans-serif;
+}
+
+.googleBtn {
+  padding: 10px;
+  border-radius: 5px;
+  color: black;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+.loginInput {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: 2px black solid;
+  border-radius: 6px;
+}
+
+.loginForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loginBtn {
+  width: 100%;
+  margin: 20px 0px;
+}
 
 /*=============== COURSES ===============*/
 
