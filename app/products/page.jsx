@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import "boxicons";
 import Item from "@components/item";
 import Products from "@utils/Products";
 import Electronics from "@utils/Electronics";
