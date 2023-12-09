@@ -1,10 +1,11 @@
+import Image from "next/image";
 import React from "react";
 
 const Item = ({ image, name, price }) => {
   return (
     <div className="item">
       <div className="itemTop">
-        <img src={image} className="itemImg" />
+        <Image src={image} className="itemImg" alt="product-image" priority/>
       </div>
       <div className="itemBottom">
         <h3 className="itemName">{name}</h3>
