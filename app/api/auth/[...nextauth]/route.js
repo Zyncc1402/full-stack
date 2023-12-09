@@ -11,23 +11,22 @@ const authOptions = {
     }),
   ],
   callbacks: {
-    async signIn({user, account}) {
-      console.log("Signed in Succesfully")
-      const {name, email, image} = user
+    async signIn({ user, account }) {
+      console.log("Signed in Succesfully");
+      const { name, email, image } = user;
       await connectToDB();
-      const userExists = User.findOne({email})
+      const userExists = User.findOne({ email });
       if (userExists) {
         User.create({
           email,
           name,
-          image
-        })
+          image,
+        });
       }
-      return true
-    }
-  }
+      return true;
+    },
+  },
 };
 
 const handler = NextAuth(authOptions);
-
 export { handler as GET, handler as POST };

@@ -129,12 +129,13 @@ img {
 /*=============== HEADER ===============*/
 .header {
   width: 100%;
-  background-color: transparent;
+  background-color: white;
   position: fixed;
   top: 0;
   right: 0;
   padding: 20px 0px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: 10;
 }
 /*=============== NAV ===============*/
 .nav {
@@ -237,7 +238,114 @@ input::placeholder {
   margin: 20px 0px;
 }
 
-/*=============== COURSES ===============*/
+/*=============== PRODUCTS ===============*/
+.productContainer {
+  width: 100%;
+  text-align: center;
+}
+
+.productsTitle {
+  padding: 40px;
+  font-size: 40px;
+}
+
+.productWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.item {
+  position: relative;
+  border-radius: 14px;
+  height: 430px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 20px;
+  overflow: hidden;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  transition: 0.3s;
+}
+
+@media screen and (min-width: 767px) {
+  .item:hover .itemImg {
+    transform: translateY(-8px);
+  }
+}
+
+.itemImg {
+  width: 270px;
+  margin-top: 50px;
+  transition: 0.3s;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.itemBottom {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.cart {
+  position: relative;
+  padding: 5px;
+}
+
+.cartCounter {
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  outline: 2px black solid;
+  user-select: none;
+}
+
+.itemName {
+  font-weight: 500;
+}
+
+.itemPrice {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.sortMenu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.sortBtn {
+  padding: 10px 20px;
+  background: transparent;
+  font-weight: 600;
+  font-size: 17px;
+}
 
 /*=============== TESTMONIALS ===============*/
 
