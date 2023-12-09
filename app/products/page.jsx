@@ -9,10 +9,9 @@ import Accessories from "@utils/Accessories";
 const Users = () => {
   const [shopFilter, setShopFilter] = useState("All");
   return (
-    <div className="productContainer mainpage section container">
+    <div className="productContainer mainpage container">
       <h1 className="productsTitle">Products</h1>
       <div className="sortMenu">
-        <box-icon name="filter-alt"></box-icon>
         <button
           className="sortBtn button-29"
           onClick={() => setShopFilter("All")}

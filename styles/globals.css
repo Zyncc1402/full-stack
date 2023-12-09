@@ -92,8 +92,9 @@ img {
 }
 
 .container {
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 @media only screen and (max-width: 425px) {
@@ -119,7 +120,7 @@ img {
 }
 
 .flex {
-    display: flex;
+  display: flex;
 }
 
 .main {
@@ -149,6 +150,69 @@ img {
   align-items: center;
   justify-content: space-evenly;
   column-gap: 50px;
+}
+
+.menuIcon {
+  font-size: 40px;
+  display: none;
+}
+
+.menuCloseIcon {
+  font-size: 30px;
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .menuIcon {
+    display: block;
+  }
+
+  .menuCloseIcon {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+
+  .showNavMenu {
+    width: 100%;
+    height: 30vh;
+    background-color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    padding: 30px 40px;
+    gap: 20px;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: 0.3s;
+  }
+
+  .hideNavMenu {
+    width: 100%;
+    height: 30vh;
+    background-color: white;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: fixed;
+    top: -100%;
+    right: 0;
+    font-size: 20px;
+    padding: 30px 40px;
+    gap: 20px;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: 0.3s;
+  }
 }
 
 .btn {
@@ -203,8 +267,9 @@ a {
   border-radius: 6px;
 }
 
-textarea:focus, input:focus{
-    outline: none;
+textarea:focus,
+input:focus {
+  outline: none;
 }
 
 input::placeholder {
@@ -242,11 +307,19 @@ input::placeholder {
 .productContainer {
   width: 100%;
   text-align: center;
+  padding: 100px 20px;
 }
 
 .productsTitle {
   padding: 40px;
   font-size: 40px;
+}
+
+.itemCartIcon {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 26px;
 }
 
 .productWrapper {
@@ -298,30 +371,6 @@ input::placeholder {
   margin-top: 10px;
 }
 
-.cart {
-  position: relative;
-  padding: 5px;
-}
-
-.cartCounter {
-  font-size: 12px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: black;
-  background-color: white;
-  border-radius: 50%;
-  font-weight: 700;
-  width: 15px;
-  height: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2px;
-  outline: 2px black solid;
-  user-select: none;
-}
-
 .itemName {
   font-weight: 500;
 }
@@ -365,8 +414,8 @@ input::placeholder {
 /* For small devices */
 @media screen and (max-width: 320px) {
   .container {
-    margin-left: var(--mb-1);
-    margin-right: var(--mb-1);
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 
