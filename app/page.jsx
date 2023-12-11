@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <div className="mainpage section container">
-        <h1>Hi there, {status === "authenticated" ? session?.user?.name : "User"}</h1>
+        <h1>Home</h1>
       </div>
     </>
   );
