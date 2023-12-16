@@ -1,10 +1,11 @@
 import "@styles/globals.css";
-import Navbar from '@components/navbar/Navbar'
-import Provider from '@components/provider'
+import Navbar from "@components/navbar/Navbar";
+import Provider from "@components/provider";
+import { CartProvider } from "@context/CartContext";
 
 export const metadata = {
-  title: "E-Commerce Website",
-  description: "first time doing this",
+  title: "Zync Market",
+  description: "E - Commerce Website",
 };
 
 const RootLayout = ({ children }) => {
@@ -12,10 +13,12 @@ const RootLayout = ({ children }) => {
     <html lang="en">
       <body>
         <Provider>
-          <main className="app">
-            <Navbar />
-            {children}
-          </main>
+          <CartProvider>
+            <main className="app">
+              <Navbar />
+              {children}
+            </main>
+          </CartProvider>
         </Provider>
       </body>
     </html>
