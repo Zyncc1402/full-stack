@@ -2,14 +2,14 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { signOut, useSession } from "next-auth/react";
+import { signOut, signIn, useSession } from "next-auth/react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { RxCross2 } from "react-icons/rx";
 const Navbar = () => {
   const { status } = useSession();
-  const [toggleMenu, setToggleMenu] = useState(false)
+  const [toggleMenu, setToggleMenu] = useState(false);
   const closeMenu = () => {
-    setToggleMenu(false)
+    setToggleMenu(false);
   };
   const openMenu = () => {
     setToggleMenu(true);
@@ -54,11 +54,15 @@ const Navbar = () => {
                 </button>
               </div>
             ) : (
-              <Link href="/sign-in">
-                <button className="btn" onClick={closeMenu}>
-                  Login
-                </button>
-              </Link>
+              <button
+                className="btn"
+                onClick={() => {
+                  signIn("google");
+                  closeMenu();
+                }}
+              >
+                Login
+              </button>
             )}
             <RxCross2 className="menuCloseIcon" onClick={closeMenu} />
           </ul>

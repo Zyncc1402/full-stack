@@ -1,8 +1,8 @@
 "use client";
 
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-export const CartContext = createContext();
+export const CartContext = createContext(null);
 
 export const CartProvider = ({ children }) => {
   const number = 69;
@@ -23,3 +23,11 @@ export const CartProvider = ({ children }) => {
     <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
   );
 };
+
+export function useCartContext() {
+  const context = useContext(CartContext) 
+  if(!context) {
+    throw new Error(" error!!!")
+  }
+  return context
+}

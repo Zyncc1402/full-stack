@@ -1,17 +1,4 @@
-import product1 from "../utils/Products/1.jpg";
-import product2 from "../utils/Products/2.jpg";
-import product4 from "../utils/Products/4.jpg";
-import product5 from "../utils/Products/5.jpg";
-import product6 from "../utils/Products/6.jpg";
-import product7 from "../utils/Products/7.jpg";
-import product8 from "../utils/Products/8.jpg";
-import product9 from "../utils/Products/9.jpg";
-import product10 from "../utils/Products/10.jpg";
-import product11 from "../utils/Products/11.jpg";
-import product12 from "../utils/Products/12.jpg";
-import product13 from "../utils/Products/13.jpg";
-
-let Products = [
+[
   {
     id: 1,
     fullName: "Wildcraft 44 Ltrs Blaze 3 Tiger Black Casual Backpack",
@@ -102,5 +89,3 @@ let Products = [
     price: "2,20,269",
   },
 ];
-
-export default Products;
