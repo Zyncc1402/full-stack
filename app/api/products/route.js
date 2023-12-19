@@ -5,5 +5,5 @@ import { NextResponse } from "next/server";
 export async function GET() {
     connectToDB();
     const res = await Products.find()
-    return NextResponse.json(res)
+    return NextResponse.json({data: res})
 }

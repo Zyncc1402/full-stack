@@ -1,59 +1,23 @@
-"use client";
+import { Suspense } from "react";
+import ProductPageUI from "./productPage";
+import Welcome from "./welcomeUser";
 
-import React, { useState, useEffect } from "react";
-import { useSession } from "next-auth/react";
-import Item from "@components/item";
-
-const Users = () => {
-  const [shopFilter, setShopFilter] = useState("All");
-  const { status, data: session } = useSession();
-  const [products, setProducts] = useState([]);
-
-  const getProducts = async () => {
-    const res = await fetch("api/products", {
+const Users = async () => {
+  // REM TO CHANGE THE LINK ON PRODUCTION / HOSTING
+  const res = await fetch("http://localhost:3000/api/products", {
       cache: "no-store",
     });
-    const data = await res.json()
-    setProducts(await data)
-    console.log(products)
-  };
-  
-  useEffect(() => {
-    getProducts();
-  }, []);
-
+    const {data} = await res.json()
+    const product = data
   return (
     <div className="productContainer mainpage container">
-      <h2 className="productsTitle">
-        Hi there, {status === "authenticated" ? session?.user?.name : ""}
-      </h2>
-      <div className="section">
-        <div className="sortMenu">
-          <button
-            className="sortBtn button-29"
-            onClick={() => setShopFilter("All")}
-          >
-            All
-          </button>
-          <button
-            className="sortBtn"
-            onClick={() => setShopFilter("Electronics")}
-          >
-            Electronics
-          </button>
-          <button
-            className="sortBtn"
-            onClick={() => setShopFilter("Accessories")}
-          >
-            Accessories
-          </button>
-        </div>
-        <div className="productWrapper">
-          {products.map((product) => {
-            <Item key={product._id} image={product.image} price={product.price} name={product.short_name} />
-          })}
-        </div>
-      </div>
+      {/* USE CAN USE THESE SUSPENSE TO LIKE UK WHILE LOADING THE PRODUCTS WE CAN SHOW THE SKELETON UI OF THE PRODUCT PAGE, SMTGH LIKE THAT */}
+      <Suspense>
+        <Welcome/>
+      </Suspense>
+      <Suspense>
+        <ProductPageUI products={product} />
+      </Suspense>
     </div>
   );
 };
